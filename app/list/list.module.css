@@ -1,0 +1,36 @@
+.main {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: inherit;
+  width: 70%;
+  height: 60vh;
+  background-color: #07121b;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  color: white;
+}
+.table {
+  border-collapse: collapse;
+  width: 85%;
+  height: 80%;
+}
+.thead {
+  height: 6rem;
+}
+.tbody > .trow {
+  height: 3rem;
+}
+.thead,
+.tbody {
+  text-align: center;
+}
+.tdata,
+.thead {
+  border: 1px solid white;
+}
