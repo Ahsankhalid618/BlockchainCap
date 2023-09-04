@@ -1,6 +1,10 @@
 .main {
-  height: 80vh;
+  background: url("../../public/core.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
   width: 100%;
+  padding: 5rem 0 5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +12,7 @@
 .container {
   display: inherit;
   width: 70%;
-  height: 60vh;
+  padding: 5rem 0 5rem 0;
   background-color: #07121b;
   justify-content: center;
   align-items: center;

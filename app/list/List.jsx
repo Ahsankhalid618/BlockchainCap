@@ -1,7 +1,17 @@
 import React from "react";
 import styles from "./list.module.css";
 
+const data = [
+  {
+    no: 1,
+    name: "Bitcoin",
+    symbol: "BTC",
+    price: 26540,
+  },
+];
+
 function List() {
+  const repeatedData = Array(17).fill(data[0]);
   return (
     <div className={styles.main}>
       <div className={styles.container}>
@@ -15,42 +25,14 @@ function List() {
             </tr>
           </thead>
           <tbody className={styles.tbody}>
-            <tr className={styles.trow}>
-              <td className={styles.tdata}>01</td>
-              <td className={styles.tdata}>Bitcoin</td>
-              <td className={styles.tdata}>BTC</td>
-              <td className={styles.tdata}>26540</td>
-            </tr>
-            <tr className={styles.trow}>
-              <td className={styles.tdata}>01</td>
-              <td className={styles.tdata}>Bitcoin</td>
-              <td className={styles.tdata}>BTC</td>
-              <td className={styles.tdata}>26540</td>
-            </tr>
-            <tr className={styles.trow}>
-              <td className={styles.tdata}>01</td>
-              <td className={styles.tdata}>Bitcoin</td>
-              <td className={styles.tdata}>BTC</td>
-              <td className={styles.tdata}>26540</td>
-            </tr>
-            <tr className={styles.trow}>
-              <td className={styles.tdata}>01</td>
-              <td className={styles.tdata}>Bitcoin</td>
-              <td className={styles.tdata}>BTC</td>
-              <td className={styles.tdata}>26540</td>
-            </tr>
-            <tr className={styles.trow}>
-              <td className={styles.tdata}>01</td>
-              <td className={styles.tdata}>Bitcoin</td>
-              <td className={styles.tdata}>BTC</td>
-              <td className={styles.tdata}>26540</td>
-            </tr>
-            <tr className={styles.trow}>
-              <td className={styles.tdata}>01</td>
-              <td className={styles.tdata}>Bitcoin</td>
-              <td className={styles.tdata}>BTC</td>
-              <td className={styles.tdata}>26540</td>
-            </tr>
+            {repeatedData.map((item, index) => (
+              <tr key={index} className={styles.trow}>
+                <td className={styles.tdata}>{item.no}</td>
+                <td className={styles.tdata}>{item.name}</td>
+                <td className={styles.tdata}>{item.symbol}</td>
+                <td className={styles.tdata}>{item.price}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
