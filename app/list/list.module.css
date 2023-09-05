@@ -20,21 +20,27 @@
   color: white;
 }
 .table {
+  text-align: center;
   border-collapse: collapse;
-  width: 85%;
-  height: 80%;
+ 
 }
 .thead {
   height: 6rem;
 }
+.trow{
+  border-collapse: collapse;
+}
 .tbody > .trow {
   height: 3rem;
 }
+
 .thead,
 .tbody {
   text-align: center;
+  
 }
 .tdata,
 .thead {
   border: 1px solid white;
+  
 }
