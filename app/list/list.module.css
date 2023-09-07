@@ -19,28 +19,26 @@
   overflow-x: auto;
   color: white;
 }
-.table {
+
+.container Table {
   text-align: center;
   border-collapse: collapse;
- 
 }
 .thead {
-  height: 6rem;
-}
-.trow{
-  border-collapse: collapse;
-}
-.tbody > .trow {
   height: 3rem;
 }
 
-.thead,
-.tbody {
-  text-align: center;
-  
-}
-.tdata,
-.thead {
+.tclm {
   border: 1px solid white;
-  
+  height: 3rem;
+  width: 8rem;
+  font-family: "Avenir Next", Lato, Arial, sans-serif;
+  font-size: 1rem;
+}
+.trow {
+  height: 2rem;
+}
+
+.tdata {
+  border: 1px solid white;
 }
