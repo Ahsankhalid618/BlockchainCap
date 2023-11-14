@@ -1,11 +1,8 @@
 
 .main {
-  background: url("../../public/core.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   height: auto;
   width: 100%;
-  padding: 5rem 0 5rem 0;
+  padding: 13rem 0 5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +19,7 @@
 }
 
 .container Table {
-  text-align: center;
+  
   border-collapse: collapse;
 }
 .thead {
@@ -43,3 +40,13 @@
 .tdata {
   border: 1px solid white;
 }
+.high_24h {
+  color: green;
+  font-weight: bold;
+}
+
+.low_24h {
+  color: red;
+  font-weight: bold;
+}
+

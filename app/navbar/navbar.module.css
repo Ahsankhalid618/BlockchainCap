@@ -4,7 +4,7 @@
   min-height: 4rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color: #041122da;
   position: absolute;
   z-index: 1;
@@ -27,4 +27,16 @@
 }
 .item:hover {
   color: #0bbaff;
+}
+.btn{
+  font-family: "Avenir Next", Lato, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ffff;
+  cursor: pointer;
+  background: linear-gradient(to right, #229191, rgb(38 200 200), #15b8b8);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
 }

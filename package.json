@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "server": "nodemon server/index.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -10,15 +11,28 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.1.10",
+    "@nextui-org/use-infinite-scroll": "^2.1.1",
+    "@react-stately/data": "^3.10.3",
+    "axios": "^1.6.1",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.3",
     "next": "13.4.19",
+    "next-auth": "^4.24.5",
+    "nodemon": "^3.0.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-scrollbars-custom": "^4.1.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.29",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3"
   }
 }

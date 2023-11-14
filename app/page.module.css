@@ -3,11 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  padding-top: 13rem;
   background: url("../public/new.png");
   background-size: cover;
   background-repeat: no-repeat;
-  text-align: center;
+  background-attachment: fixed;
+  
 
 }
 .main h1 {
