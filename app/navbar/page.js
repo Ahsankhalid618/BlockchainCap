@@ -11,7 +11,9 @@ function Navbar() {
             <ul className={Styles.list}>
                <Link href="/"><li className={Styles.item}>Home</li></Link> 
                <li className={Styles.item}>CoinListing</li>
-                <li className={Styles.item}>Token Swap</li>
+               <Link href="/tokenSwap">
+          <li className={Styles.item}>Token Swap</li>
+        </Link>
                 <li className={Styles.item}>Crypto-Fiat </li>
                 <li className={Styles.item}>Wallet</li>
             </ul>
