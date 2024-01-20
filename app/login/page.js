@@ -1,13 +1,10 @@
 "use client";
 import {useState} from 'react';
-import { getCookie } from 'cookies-next';
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
-const Login = ({username}) => {
-  const router = useRouter()
-  const { msg } = router.query ?? { msg: null };
-  const [error, setError] = useState(null); 
+
+const Login = () => {
+ const [error, setError] = useState("") 
 
   return (
     <section className="bg-main bg-cover">
@@ -18,12 +15,8 @@ const Login = ({username}) => {
             <h1 className="text-center text-xl font-bold leading-tight tracking-tight pb-9 pt-4 text-white md:text-2xl dark:text-white">
               Sign In
             </h1>
-            {msg ?
-                <h3>{msg}</h3>
-            :
-                <></>
-            }
-            <form className="space-y-4 md:space-y-6" action='/api/login' method='POST'>
+            
+            <form className="space-y-4 md:space-y-6" >
               <div className='w-full'>
                 <label htmlFor="username" className="block mb-2 text-sm font-medium text-white dark:text-white">
                   Username
@@ -65,7 +58,7 @@ const Login = ({username}) => {
                 </div>
               </div>
               <button
-                type="submit" value="Login"
+                type="submit" 
                 className="w-full text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Log In
@@ -86,21 +79,6 @@ const Login = ({username}) => {
       </div>
     </section>
   );
-};
-
-export async function getServerSideProps(context) {
-  const req = context.req
-  const res = context.res
-  var username = getCookie('username', { req, res });
-  if (username != undefined){
-      return {
-          redirect: {
-              permanent: false,
-              destination: "/"
-          }
-      }
-  }
-  return { props: {username:false} };
 };
 
 export default Login;

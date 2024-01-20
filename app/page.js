@@ -3,18 +3,12 @@ import styles from './page.module.css';
 import List from "./list/page";
 import { NextUIProvider } from "@nextui-org/react";
 import '@uniswap/widgets/fonts.css'
-import { CookiesProvider } from 'react-cookie';
 
-export default function Home({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
+
+export default function Home() {
   return (
     <>
-    <CookiesProvider>
-      <Component {...pageProps} />
-      
-    </CookiesProvider>
+
     <NextUIProvider>
         <section className={styles.main}>
           <h1>BlockchainCap Unleashed<br />From Tokens to Triumph</h1>
