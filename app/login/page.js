@@ -1,10 +1,55 @@
 "use client";
-import {useState} from 'react';
-import Link from 'next/link'
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 
 const Login = () => {
- const [error, setError] = useState("") 
+  const router = useRouter();
+  const [error, setError] = useState("");
+  // const session = useSession();
+  const { data: session, status: sessionStatus } = useSession();
+
+  useEffect(() => {
+    if (sessionStatus === "authenticated") {
+      router.replace("/");
+    }
+  }, [sessionStatus, router]);
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    if (!isValidEmail(email)) {
+      setError("Email is invalid");
+      return;
+    }
+
+    if (!password || password.length < 8) {
+      setError("Password is invalid");
+      return;
+    }
+
+    const res = await signIn("credentials", {
+      redirect: false,
+      email,
+      password,
+    });
+
+    if (res?.error) {
+      setError("Invalid email or password");
+      if (res?.url) router.replace("/");
+    } else {
+      setError("");
+    }
+  };
 
   return (
     <section className="bg-main bg-cover">
@@ -16,15 +61,15 @@ const Login = () => {
               Sign In
             </h1>
             
-            <form className="space-y-4 md:space-y-6" >
+            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit} >
               <div className='w-full'>
                 <label htmlFor="username" className="block mb-2 text-sm font-medium text-white dark:text-white">
-                  Username
+                  Email
                 </label>
                 <input
-                  type="username"
-                  name="username"
-                  id="username"
+                  type="email"
+                  name="email"
+                  id="email"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="example@xyz.com"
                   required
