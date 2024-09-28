@@ -12,7 +12,7 @@ export default function Home() {
     <NextUIProvider>
         <section className={styles.main}>
           <h1>BlockchainCap Unleashed<br />From Tokens to Triumph</h1>
-          <h3>Stay Ahead of the Financial Curve with crypto data and conversion platform</h3>
+          <h3>Stay ahead of the Financial Curve with crypto data and conversion platform</h3>
           <List />
         </section>
       </NextUIProvider>
