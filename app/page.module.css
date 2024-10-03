@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding-top: 13rem;
   background: url("../public/new.png");
   background-size: cover;

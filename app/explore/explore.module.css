@@ -1,0 +1,35 @@
+
+.main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 3rem;
+    background: url("../../public/new.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .main h1{
+    font-family: "Avenir Next", Lato, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 56px;
+  padding-bottom: 1rem;
+  color: #ffff;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 22, 22, 1) 4%,
+    rgba(221, 215, 15, 1) 49%,
+    rgba(6, 231, 228, 1) 91%
+  );
+  background-size: cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  }
+  

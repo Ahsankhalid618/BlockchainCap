@@ -17,6 +17,7 @@ const Signup = () => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
+    const FullName = e.target[2].value;
 
     if (!isValidEmail(email)) {
       setError("Email is invalid");
@@ -37,6 +38,7 @@ const Signup = () => {
         body: JSON.stringify({
           email,
           password,
+          FullName,
         }),
       });
       if (res.status === 400) {
@@ -50,7 +52,7 @@ const Signup = () => {
       setError("Error, try again");
       console.error('Error during fetch:', error);
     }
-    console.log(email,password)
+    
   };
 
 
@@ -98,14 +100,14 @@ const Signup = () => {
                 />
               </div>
               <div className='w-full'>
-                <label htmlFor="username" className="block mb-2 text-sm font-medium text-white dark:text-white">
-                  Username
+                <label htmlFor="FullName" className="block mb-2 text-sm font-medium text-white dark:text-white">
+                  Full Name
                 </label>
                 <input
                 
                   type="text"
-                  name="username"
-                  id="username"
+                  name="FullName"
+                  id="FullName"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Type your name"
                   required

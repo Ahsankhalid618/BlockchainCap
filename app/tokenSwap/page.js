@@ -1,35 +1,25 @@
-// pages/TokenSwap.js
-"use client";
-import {darkTheme, lightTheme, Theme, SwapWidget } from '@uniswap/widgets';
-import styles from "./tokenSwap.module.css"
-import '@uniswap/widgets/fonts.css';
+import React from "react";
+import Widget, { myDarkTheme, myLightTheme } from "./Widget"; // Import the client component
+import styles from "./tokenSwap.module.css";
 
-const myLightTheme = {
-    ...lightTheme, // Extend the lightTheme
-    accent: '#FF007A',
-    primary: '#000000',
-    secondary: '#565A69',
-  }
-  
-  const myDarkTheme = {
-    ...darkTheme, // Extend the darkTheme
-    container: '#041122da',
-    accent: '#0bbaff',
-    primary: '#FFFFFF',
-    secondary: '#888D9B',
-    module: '#092034',
-  }
-  let darkMode = true
+const tokenListUrl = "https://ipfs.io/ipns/tokens.uniswap.org";
 
 const TokenSwap = () => {
+  // Consider fetching theme preference from user or session storage
+
+  let darkMode = true;
+  const currentTheme = darkMode ? myDarkTheme : myLightTheme;
   return (
     <>
-    <div className={styles.main}>
-<div className="Uniswap">
-      <SwapWidget theme={darkMode ? myDarkTheme : myLightTheme} />
-    </div>
-    </div>
-    
+      <div className={styles.main}>
+        <h1>
+          Etherium Layer I<br />
+          UniSwap Protocol Token Swapping
+        </h1>
+        <div className="Uniswap">
+          <Widget theme={currentTheme} tokenListUrl={tokenListUrl} />
+        </div>
+      </div>
     </>
   );
 };

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import styles from "./list.module.css";
 import Image from "next/image";
@@ -13,6 +13,14 @@ import {
 } from "@nextui-org/react";
 import { useInfiniteScroll } from "@nextui-org/use-infinite-scroll";
 import { useAsyncList } from "@react-stately/data";
+import { TickerTape } from "react-ts-tradingview-widgets";
+import dynamic from "next/dynamic";
+const SymbolOverviewNoSSR = dynamic(
+  () => import("react-ts-tradingview-widgets").then((w) => w.SymbolOverview),
+  {
+    ssr: false,
+  }
+);
 
 function List() {
   const [isLoading, setIsLoading] = useState(false);
@@ -64,9 +72,21 @@ function List() {
   useEffect(() => {
     list.reload();
   }, []);
+  const fear = "https://alternative.me/crypto/fear-and-greed-index.png";
 
   return (
     <div className={styles.main}>
+      <h1>
+        Today's Cryptocurrency Prices
+        <br />
+        Top Trending Tokens
+      </h1>
+
+      <TickerTape colorTheme="dark" isTransparent="true"></TickerTape>
+
+      {/* <Image src={fear} alt="Latest Crypto Fear & Greed Index" width={300} height={300} /> */}
+      {/* <iframe src="https://bit2me.com/widget/crypto-carousel/v1" style={{display: 'block', width: '100%', height: '40px'}} frameborder="0"></iframe> */}
+
       <Table
         isHeaderSticky
         hideScrollBar
@@ -81,17 +101,30 @@ function List() {
         }
         classNames={{
           base: "max-h-[800px] w-modern dark text-dark-primary bg-dark-primary rounded-lg",
-          table: "min-h-[400px] w-modern dark bg-dark-primary text-white rounded-lg",
+          table:
+            "min-h-[400px] w-modern dark bg-dark-primary text-white rounded-lg",
         }}
       >
         <TableHeader className="fixed top-0 left-0 right-0 flex justify-center dark:bg-dark-primary">
-          <TableColumn key="market_cap_rank">ID</TableColumn>
-          <TableColumn key="name">Name</TableColumn>
+          <TableColumn className="text-center" key="market_cap_rank">
+            ID
+          </TableColumn>
+          <TableColumn className="text-center" key="name">
+            Name
+          </TableColumn>
           <TableColumn key="image">Image</TableColumn>
-          <TableColumn key="symbol">Symbol</TableColumn>
-          <TableColumn key="current_price">Price (USD)</TableColumn>
-          <TableColumn key="high_24h">High 24hr</TableColumn>
-          <TableColumn key="low_24h">Low 24hr</TableColumn>
+          <TableColumn className="text-center" key="symbol">
+            Symbol
+          </TableColumn>
+          <TableColumn className="text-center" key="current_price">
+            Price (USD)
+          </TableColumn>
+          <TableColumn className="text-center" key="high_24h">
+            High 24hr
+          </TableColumn>
+          <TableColumn className="text-center" key="low_24h">
+            Low 24hr
+          </TableColumn>
         </TableHeader>
         <TableBody
           isLoading={isLoading}

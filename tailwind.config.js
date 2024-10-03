@@ -41,6 +41,9 @@ module.exports = {
       'scrollbar-track-color': '#e0e0e0',
       'scrollbar-thumb-color': '#808080',
       'dark-primary': '#030e1d',
+      'footer': '#041122',
+      'main': '#0bbaff',
+      
 
       blue: {
         50: "#e6f1fe",

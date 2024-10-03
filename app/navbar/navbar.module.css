@@ -4,11 +4,13 @@
   min-height: 4rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: #041122da;
-  position: absolute;
+  justify-content: space-between; /* Updated to space-between */
+  background-color: #041122;
+  position: fixed;
   z-index: 1;
+  padding: 0 25px; /* Add padding to the left and right */
 }
+
 .list {
   display: inherit;
   list-style: none;
@@ -16,26 +18,29 @@
   align-items: inherit;
   gap: 5rem;
 }
+
 .item {
-  font-family: "Avenir Next", Lato, Arial, sans-serif;
+  font-family: "Helvetica", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", sans-serif;;
   font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
   line-height: 4rem;
   color: #ffff;
   cursor: pointer;
 }
+
 .item:hover {
   color: #0bbaff;
 }
-.btn{
+
+.btn {
   font-family: "Avenir Next", Lato, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
   color: #ffff;
   cursor: pointer;
-  background: linear-gradient(to right, #229191, rgb(38 200 200), #15b8b8);
+  background: #0bbaff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;

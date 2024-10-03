@@ -1,6 +1,4 @@
 import NextAuth from "next-auth";
-import { Account, User as AuthUser } from "next-auth";
-import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 import User from "@/models/User";
@@ -15,6 +13,7 @@ export const authOptions: any = {
       credentials: {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
+        FullName : {label: "FullName", type: "text"},
       },
       async authorize(credentials: any) {
         await connect();
